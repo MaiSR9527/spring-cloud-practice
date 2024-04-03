@@ -1,0 +1,26 @@
+server:
+  port: 7003
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai&characterEncoding=utf8
+  application:
+    name: cloud-user-center-provider-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        # 开发NameSpace，值为UUID
+        namespace: fa47d71f-9bc5-45ae-96c1-a6b9f7c55700
+        # 广州集群
+        cluster-name: GZ
+        metadata:
+          version: v1
+          info: user-center
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
